@@ -1,11 +1,18 @@
 import React from 'react';
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import AboutCase from './components/page/About';
+import HomeCase from './components/page/Home';
+import InteresingCase from './components/page/Interest';
 
-function App() {
+const App : React.FC = () => {
   return (
-    <div>
-     Saratov
-    </div>
-  );
+  <BrowserRouter>
+  <Switch>
+    <Route path={'/'} exact component={HomeCase}/>
+    <Route path={'/interesing'} component={InteresingCase}/>
+    <Route path={'/about'} component={AboutCase}/>
+  </Switch>
+  </BrowserRouter>)
 }
 
 export default App;
